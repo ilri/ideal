@@ -1,0 +1,201 @@
+body{
+   width: 870px; /*add me shit*/
+}
+
+tr td{
+   padding: 2px;
+   margin: 2px;
+}
+
+html > body #sample_info{
+   margin: 8px;
+}
+
+#sample_info table{
+   margin: 5px 2%;
+   text-align: center;
+   width: 844px
+}
+
+#sample_info > table{
+   width: 97%;
+}
+
+#sample_info table th{
+   background-color: #93c3b7;
+}
+
+#samples_table table{
+   border: 1px solid black;
+}
+
+#samples_table .metadata{
+   text-align: center;
+}
+
+.animalData td{
+   cursor: pointer;
+   background-color: #c3e3db;
+}
+
+#sample_info > #samples_table .animalData td{
+   border: 1px solid white;
+}
+
+#sample_info .parent_samples td table{
+   border-spacing: 1pt;
+   margin: 2px 1%;
+   width: 97%;
+}
+
+.parent_samples td table td{
+   background-color:#a1c3e6;
+}
+
+#sample_info .parent_samples td table th{
+   background-color:#8bb4de;
+}
+
+#top_panel{
+   text-align: center;
+   margin: 0px 5px 0px 10%;
+   width: 600px;
+   padding-bottom: 10px;
+}
+
+html > body #top_panel{
+   width: 600px;
+}
+
+#top_panel div{
+   text-align: center;
+   padding: 5px;
+}
+
+#top_panel #filter{
+   float: left;
+}
+
+#toplinks{
+   float: none;
+   text-align: center;
+   height: 60px;
+   padding: 0px 10px;
+   width: 310px;
+   margin-left: 0px;
+}
+
+html > body #toplinks{
+   margin-left: 68%;
+}
+
+#home{
+   margin: 10px 15%;
+}
+
+#main{
+   margin: 10px 15%;
+}
+
+#main table{
+   margin: 0px 10%;
+   text-align: center;
+}
+
+html>body #main table{
+   width: 100%;
+   margin: 0px;
+}
+
+#main table tr td{
+   text-align: center;
+}
+
+#main table .left_align{
+   text-align: left;
+   width: 56%;
+}
+
+#main table .right_align{
+   text-align: right;
+}
+
+#main input{
+   background-color:#d5f1f1;
+   margin: 2px 2px;
+}
+
+#uploads fieldset{
+   border: 1px dotted #9DBED2;
+   padding: 2px;
+   width: 80%;
+   margin: 0px 9%;
+}
+
+#uploads fieldset input{
+   margin: 5px 2px;
+}
+
+#query_options{
+   width: 95%;
+   margin: 17px 2% 2px;
+   text-align: center;
+   padding: 2px;
+}
+
+#query_interface{
+   border: 1px dotted blue;
+   width: 600px;
+   height: 164px;
+   margin: 0px 135px;
+   float: none;
+}
+
+html > body #query_interface{
+   border: 1px dotted blue;
+   width: 600px;
+   height: 178px;
+   float: none;
+}
+
+#query_interface .fields div{
+   float: left;
+   padding: 1px 3px;
+   margin: 2px 1px;
+}
+
+#query_interface .fields div input[type=checkbox]{
+   padding: 0px;
+   margin: 2px 2px 0px;
+}
+
+#query_interface .fields{
+   float: none;
+   margin: 5px;
+}
+
+#query_interface #links{
+   width: 95%;
+   text-align: center;
+   margin-top: 40px;
+}
+
+html > body #query_interface #links{
+   margin-top: 60px;
+
+}
+
+#query_interface #input{
+   float: left;
+   text-align: right;
+   width: 55%;
+}
+
+#swappin_link{
+   width: 150px;
+   margin-left: 57%;
+   float: none;
+   text-align: left;
+   height: 15px;
+   vertical-align: middle;
+}

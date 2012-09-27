@@ -1,0 +1,220 @@
+root {
+    display: block;
+}
+
+html{
+	overflow: -moz-scrollbars-vertical;
+}
+
+body {
+    font-family:'Times New Roman',Times,serif;
+    margin: 0;
+    padding: 0;
+    color: black;
+    background-color:#f1f1f1;
+   font-size: 10pt;
+}
+
+-moz-any-link:focus {
+  border: none;
+}
+
+#header{
+	height: 124px;
+	margin:0;
+	padding:0px;
+   width: 100%;
+	text-align: center;
+	vertical-align: middle;
+	border-bottom:1px gray solid;
+}
+
+#contents{
+   width: 870px;
+   max-height: 630px;
+   overflow-y: auto;
+}
+
+#footer{
+   height: 30px;
+   border: 1px solid gray;
+   width: 870px;
+   font-size:.8em;
+   font-weight: bold;
+   text-align: right;
+   padding: 4px 2px 0px 2px;
+   vertical-align:middle;
+   background-color: #CBC19E;
+   margin: 0px;
+}
+
+#footer_links{
+   text-align:center;
+   margin: 10px;
+   border-top: 1px solid #CBC19E;
+}
+
+#maintable{
+   margin: 0px 15%;
+   border: 1px solid gray;
+}
+
+#maintable a, #maintable a:hover{
+   font-weight: bold;
+   padding: 2px;
+   font-size: 0.8em;
+   text-decoration: none;
+}
+
+#maintable tbody{
+    background-color: #ffffff;
+}
+
+#unass_boxes table{
+   border: none;
+   width: 60%;
+   margin-left:20%;
+}
+
+#unass_boxes table tr th{
+   text-align: left;
+}
+
+#contents #uploads{
+   margin: 5px 10%;
+   text-align: center;
+}
+
+#contents #inputs{
+   margin: 10px 30%;
+}
+
+#uploads input{
+   margin: 2px;
+   border: 1px solid gray;
+}
+
+#setup{
+   margin: 10px 22%;
+}
+
+#setup table tr{
+   border-bottom: 1px dotted black;
+}
+
+#setup table td{
+   margin: 2px;
+}
+
+#links{
+   width: 98%;
+   text-align:center;
+   margin: 3px;
+}
+
+#links input[type=submit], #links input[type=reset]{
+   background-color:#FFEBCD;
+   border: 1px solid black;
+   margin: 2px 3px;
+}
+
+#page_header{
+   width: 100%;
+   text-align: center;
+   font-size:2em;
+   color:orange;
+   font-weight: bold;
+}
+
+#addinfo{
+   text-align: center;
+}
+
+#assigning{
+   width: 99%;
+   margin: 5px 0px;
+   border-bottom: 1px solid gray;
+}
+
+#assigned{
+   width: 39%;
+   float: left;
+   max-height:580px;
+   height:580px;
+}
+
+#assigning div{
+   overflow-x: auto;
+   text-align: center;
+   max-height: 500px;
+   height: 500px;
+}
+
+#to_assign, #in_assigned{
+   width: 98%;
+   border-left: 1px solid gray;
+   padding-left: 5px;
+   border-top: 1px solid black;
+   border-bottom: 1px solid black;
+}
+
+#assigned{
+   width: 43%;
+   float: left;
+}
+
+#in_assigned{
+   max-height:530px;
+   height:530px;
+   overflow-x: auto;
+   width: 98%;
+   margin-top: 35px;
+}
+
+#to_assign table, #assigned table{
+   width: 98%;
+   margin: 3px;
+   font-size:smaller;
+}
+
+#assignCombo{
+   padding: 3px;
+   text-align: center;
+   height: auto;
+   margin:3px;
+}
+
+#sublinks{
+   height: auto;
+   margin: 2px;
+}
+
+#assigned_trays, #unassigned_trays{
+   max-height:530px;
+   overflow-x: auto;
+   width: 47%;
+   margin: 5px;
+   border: 1px dotted black;
+   padding: 5px;
+}
+
+#assigned_trays table, #unassigned_trays table{
+   width: 97%;
+   margin: 0px 5px;
+}
+
+#unassigned_trays{
+   float: left;
+}
+
+#assigningTrays div table{
+   font-size: 9pt;
+}
+
+.dark_brown{
+   background-color: #CBC19E;
+}
+
+.light_brown{
+   background-color: #EFE5C2;
+}

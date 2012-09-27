@@ -1,0 +1,141 @@
+#plate_results{
+   width: 80%;
+   margin: 5px 10%;
+}
+
+.elisa_setup{
+   margin: 15px 5% 3px 15%;
+}
+
+.elisa_setup tr td{
+   border-bottom: 1px solid #CBC19E;
+   border-right: 1px solid #CBC19E;
+}
+
+#plate_results table td{
+   padding: 2px;
+}
+
+#plate_results .top_row td{
+   border-top: 1px solid #CBC19E;
+}
+
+#plate_results .left_cell{
+   border-left: 1px solid #CBC19E;
+}
+
+#plate_results .actual_results table{
+   border: 1px solid black;
+   margin: 10px 5% 0px;
+   text-align: center;
+   width: 90%;
+}
+
+#plate_results .actual_results .selected_result td{
+   border-bottom:double black;
+   border-top:double black;
+}
+
+#plate_results .actual_results .selected_result .left{
+   border-left:double black;
+}
+
+#plate_results .actual_results .selected_result .right{
+   border-right:double black;
+}
+
+#plate_results .actual_results .pos_elisa_res{
+   background-color: #ff6666;
+}
+
+#plate_results .actual_results .neg_elisa_res{
+   background-color: #99ff99;
+}
+
+#plate_results .actual_results .elisa_var{
+   font-weight: bold;
+   color:blue;
+}
+
+.results_lists{
+   list-style-type:lower-alpha;
+}
+
+#project_list{
+   list-style-type:square;
+}
+
+/*=============================Browsing by animals============================*/
+#animal_browsing{
+    width: 95%;
+    height: 300px;
+    margin-top: 3px;
+    margin: 0px 2%;
+}
+
+#animal_browsing #search_panel{
+    width: 99%;
+    height: auto;
+    border: 1px dotted #CBC19E;
+    margin: 0px 2px;
+    font-size: 0.6em;
+    padding-top: 5px;
+}
+
+#search_panel div{
+   text-align: center;
+}
+
+#search_panel div input, #search_panel div select{
+   margin: 0px 3px;
+}
+
+#animal_browsing #left_panel{
+}
+
+#animal_browsing #left_panel div{
+    float: left;
+    width: 25%;
+    overflow: auto;
+    height: 60%;
+}
+
+#animal_browsing #right_panel{
+    width: 77%;
+    margin-left: 26%;
+    border: 1px dotted #CBC19E;
+    text-align: center;
+   font-size: 1.2em;
+}
+
+#results div{
+   text-align: center;
+   margin: 3px 2px;
+}
+
+#results table{
+   width: 99%;
+   font-size: 0.95em;
+}
+
+#results table tr td, #results table tr th{
+   border: 1px solid white;
+   padding: 1px;
+   background-color: #C2B899;
+}
+
+#results table tr th{
+   text-align: center;
+}
+/*=============================End of Browsing by animals=====================*/
+
+#addinfo{
+   font-size: 2em;
+   color: #6A5325;
+   margin: 5px;
+}
+
+#footer_links{
+    border-top: 1px dotted #CBC19E;
+    margin-top: 2px;
+}

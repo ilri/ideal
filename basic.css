@@ -1,0 +1,223 @@
+root {
+    display: block;
+}
+
+html{
+	overflow: -moz-scrollbars-vertical;
+}
+
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 76%;
+    color: #000000;
+    background-color:#f1f1f1;
+}
+
+-moz-any-link:focus {
+  border: none;
+}
+
+#header{
+   height: 243px;
+   margin: 4px;
+   padding:0px;
+   text-align: center;
+   vertical-align: middle;
+   border-bottom:1px gray solid;
+   background-image:url("images/ideal_header.jpg");
+}
+
+#contents{
+   width: 870px;
+   max-height: 580px;
+   overflow: auto;
+}
+
+#footer{
+   height: 25px;
+   border: 1px solid gray;
+   width: 853px;
+   font-size:.8em;
+   font-weight: bold;
+   text-align: right;
+   background-color: #CBC19E;
+   padding: 7px 10px 0px;
+   margin: 2px;
+}
+
+#footer_links{
+   text-align:center;
+   margin: 10px;
+}
+
+#maintable{
+   width: 875px;
+   margin-left: 15%;
+   border: 1px solid gray;
+}
+
+#maintable a, #maintable a:hover{
+   font-weight: bold;
+   padding: 2px;
+   text-decoration: none;
+   font-size: 1.2em;
+}
+
+#maintable tbody{
+    background-color: #ffffff;
+}
+
+#unass_boxes table{
+   border: none;
+   width: 60%;
+   margin-left:20%;
+}
+
+#unass_boxes table tr th{
+   text-align: left;
+}
+
+#contents #uploads{
+   width: 65%;
+   margin-right: 20%;
+   text-align: right;
+}
+
+#uploads input{
+   margin: 2px;
+   border: 1px solid gray;
+}
+
+#links{
+   width: 100%;
+   text-align:center;
+}
+
+#links input[type=submit], #links input[type=reset]{
+   background-color:#FFEBCD;
+   border: 1px solid black;
+   margin: 2px 3px;
+}
+
+#page_header{
+   width: 100%;
+   text-align: center;
+   font-size:2em;
+   color:orange;
+   font-weight: bold;
+}
+
+#addinfo{
+   text-align: center;
+}
+
+#assigning{
+   width: 99%;
+   margin: 5px 0px;
+   border-bottom: 1px solid gray;
+}
+
+#assigned{
+   width: 39%;
+   float: left;
+   max-height:580px;
+   height:580px;
+}
+
+#assigning div{
+   overflow-x: auto;
+   text-align: center;
+   max-height: 500px;
+   height: 500px;
+}
+
+#to_assign, #in_assigned{
+   width: 98%;
+   border-left: 1px solid gray;
+   padding-left: 5px;
+   border-top: 1px solid black;
+   border-bottom: 1px solid black;
+}
+
+#assigned{
+   width: 43%;
+   float: left;
+}
+
+#in_assigned{
+   max-height:530px;
+   height:530px;
+   overflow-x: auto;
+   width: 98%;
+   margin-top: 35px;
+}
+
+#to_assign table, #assigned table{
+   width: 98%;
+   margin: 3px;
+   font-size:smaller;
+}
+
+#assignCombo{
+   padding: 3px;
+   text-align: center;
+   height: auto;
+   margin:3px;
+}
+
+#sublinks{
+   height: auto;
+   margin: 2px;
+}
+
+#assigned_trays, #unassigned_trays{
+   max-height:530px;
+   overflow-x: auto;
+   width: 47%;
+   margin: 5px;
+   border: 1px dotted black;
+   padding: 5px;
+}
+
+#assigned_trays table, #unassigned_trays table{
+   width: 97%;
+   margin: 0px 5px;
+}
+
+#unassigned_trays{
+   float: left;
+}
+
+#assigningTrays div table{
+   font-size: 9pt;
+}
+
+.dark_brown{
+   background-color: #CBC19E;
+}
+
+.light_brown{
+   background-color: #EFE5C2;
+}
+
+ol li{
+   margin-left: 50px;
+   padding: 2px;
+   font-family: Arial,Helvetica,sans-serif;
+}
+
+#home{
+   margin-top: 5px;
+}
+
+#addinfo{
+   font-size: 2em;
+   color: #6A5325;
+   margin: 5px;
+}
+
+#main input{
+   background-color: #EDE8D8;
+}
