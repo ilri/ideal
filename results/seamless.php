@@ -67,7 +67,7 @@ elseif($paging=='results'){
     }
     elseif($browseBy=='search') {
        //we wanna create a filter(s) for the search criteria
-       
+
        //connect to the db
        $res=Connect2DB($config);
        if(is_string($res)) die("-1There was an error while connecting to the database.$contact");
@@ -75,16 +75,16 @@ elseif($paging=='results'){
        $lookUp=array( 'projects'=>array('avid'=>'AVID','ideal'=>'IDEAL') );
        $project=trim($_GET['project']); //we are expecting them to be strings
        if(!Checks($project, 19)) die("-1There is an error in the options provided.$contact");
-       
+
        if(is_numeric($_POST['animalType']) && $_POST['animalType']!=0){
           if($_POST['animalType']==1) $type="and b.AnimalId like 'CA%'";
           elseif($_POST['animalType']==2) $type="and b.AnimalId like 'DM%'";
        }
        else $type = '';
-       
+
        //visit date
        if(is_numeric($_POST['visitDate']) && $_POST['visitDate']!=0){
-          $query="select b.VisitDate from elisaTest as a inner join samples as b on a.sampleId=b.count 
+          $query="select b.VisitDate from elisaTest as a inner join samples as b on a.sampleId=b.count
              where a.Project='".$lookUp['projects'][$project]."' group by b.VisitDate";
           $res=GetQueryValues($query, MYSQL_ASSOC);
           if(is_string($res)) return -1;
@@ -93,7 +93,7 @@ elseif($paging=='results'){
           $visitDate="and b.VisitDate='".$visitDates[$_POST['visitDate']-1]."'";
        }
        else $visitDate='';
-       
+
        //visit id
        if(is_numeric($_POST['visitId']) && $_POST['visitId']!=0){
           $query="select substr(b.VisitID, 1, 5) as VisitID from elisaTest as a inner join samples as b on a.sampleId=b.count
@@ -154,7 +154,7 @@ elseif($paging=='results'){
 
        //the diff parts of the query are now set, so now create the query
        $query="select b.AnimalID from elisaTest as a inner join samples as b on a.sampleId=b.count inner join elisaSetUp as c on a.testID=c.testID
-             where a.Project='".$lookUp['projects'][$project]."' $type $visitDate $visitId $result $searchCriteria $testTypesCriteria 
+             where a.Project='".$lookUp['projects'][$project]."' $type $visitDate $visitId $result $searchCriteria $testTypesCriteria
              $globalSearch group by b.AnimalID";
        $res=GetQueryValues($query, MYSQL_ASSOC);
        if(is_string($res)) {
@@ -162,10 +162,10 @@ elseif($paging=='results'){
        }
        if($_POST['queryType']=='export' || $_POST['queryType']=='export_master') {
           //create the query that will fetch all the data based on the search criteria
-          $query="select b.label, b.AnimalID, b.SSID, b.comments, b.VisitID, b.VisitDate, b.TrayID, a.WELLS, a.STATUS, a.PP1, a.PP2, 
+          $query="select b.label, b.AnimalID, b.SSID, b.comments, b.VisitID, b.VisitDate, b.TrayID, a.WELLS, a.STATUS, a.PP1, a.PP2,
              a.PPav, a.DESCRIPTION, c.testType, a.ODAv, a.OD1, a.OD2, a.Var
              from elisaTest as a inner join samples as b on a.sampleId=b.count inner join elisaSetUp as c on a.testID=c.testID
-             where a.Project='".$lookUp['projects'][$project]."' $type $visitDate $visitId $result $searchCriteria $testTypesCriteria 
+             where a.Project='".$lookUp['projects'][$project]."' $type $visitDate $visitId $result $searchCriteria $testTypesCriteria
                   $globalSearch order by b.AnimalID";
 //          LogError($query);
           $res=GetQueryValues($query, MYSQL_ASSOC);
@@ -181,7 +181,7 @@ elseif($paging=='results'){
                         $t['PP2'].",".$t['PPav'].",".$t['VisitID'].",".$t['VisitDate'].",".$t['TrayID'].",".$t['comments']."\n");
              }
              fclose($fd);
-             
+
              if(isset($_SERVER['HTTP_USER_AGENT']) and strpos($_SERVER['HTTP_USER_AGENT'],'MSIE')) Header('Content-Type: application/vnd.ms-excel');
 //          Header('Content-Type: application/force-download');
              Header('Content-Disposition: attachment; filename="Query_Results_'.date("d-m-Y His").'.csv"');
@@ -222,6 +222,7 @@ global $query, $contact, $lookUp;
       $animalResults->addAnimal($tmpAnimal, $tmp['AnimalID']);   //add the created animal instance into the animal collection
    }
    //after creating all the animals, now iterate through all the results and add each result to the corresponding animal
+//   $uniqueTests = array();
    foreach($allData as $temp) {
       $tempAnimal = $animalResults->getAnimalById($temp['AnimalID']);
       //create a new instance of the sample
@@ -233,6 +234,7 @@ global $query, $contact, $lookUp;
          $tmp = preg_split('/\(INDIRECT\)/', $temp['testType']);
          $temp['testType'] = trim($tmp[0]);
       }
+//      if(!in_array($temp['testType'], $uniqueTests)) $uniqueTests[] = $temp['testType'];
 //LogError(print_r($temp, true));
       $res1 = $tempSample->addResult($temp['testType'], $temp['STATUS'], $temp['OD1'], $temp['OD2'],
               $temp['ODAv'], $temp['PP1'], $temp['PP2'], $temp['Var'], $temp['PPav'], $temp['VisitID']);
@@ -249,6 +251,7 @@ global $query, $contact, $lookUp;
    }
 //echo 'Am here';
 //   LogError(print_r($animalResults, true));
+//   LogError(print_r($uniqueTests, true));
    //get the unique visits that have been carried out so far
    $query="SELECT substr(b.VisitID, 1, 5) as VisitID FROM `elisaTest` as a inner join samples as b on a.sampleId=b.count where a.Project='"
       .$lookUp['projects'][$project]."' group by substr(b.VisitID, 1, 5)";
@@ -278,7 +281,7 @@ global $query, $contact, $lookUp;
          $temp = preg_split('/\(INDIRECT\)/', $temp['testType']);
          $temp['testType'] = trim($temp[0]);
       }
-      if($temp['testType']!='') $uniqueTests[] = $temp['testType'];
+      if($temp['testType'] != '' && !in_array($temp['testType'], $uniqueTests)) $uniqueTests[] = $temp['testType'];
    }
 
 //   LogError(print_r($uniqueTests, true));
@@ -286,7 +289,7 @@ global $query, $contact, $lookUp;
    //now all is set now lets start creating the excel spreadsheet
    fputs($fd, ",,,,This excel spreadsheet bears a format close to the expected master spreadsheet and not the exact format.,,,,\n");
    fputs($fd, "\n\n"); //give a 2 line formatting space
-   $allTests = implode(",,", $uniqueTests).",,".implode(",", $uniqueTests);
+   $allTests = implode(str_repeat(",", count($uniqueVisits)+1), $uniqueTests).str_repeat(",", count($uniqueVisits)+1).implode(",", $uniqueTests);
    fputs($fd, ",,,$allTests,,,\n"); //the header of all the tests that we are doing
    fputs($fd, ",,");
    $allVisits = implode("W,", $uniqueVisits);
@@ -296,6 +299,7 @@ global $query, $contact, $lookUp;
    //end of the headers, now the real stuff, get all the animals
    $allAnimals = $animalResults->getAnimals();
 //   LogError(print_r($allAnimals, true));
+   //loop thru all the animals and start spitting out the data
    foreach($allAnimals as $tempAnimal) {
       $tempId = $tempAnimal->getAnimalId();
       if(preg_match('/CA/', $tempId)==0){
@@ -366,7 +370,7 @@ global $query, $contact, $lookUp;
    Header('Content-Disposition: attachment; filename="Master-SpreadSheet'.date("d-m-Y His").'.csv"');
    if(headers_sent())  return $content;
    readfile('errors/output.csv');
-   die();   
+   die();
 }
 
 function DamOfCalf($allAnimals, $calfId){
@@ -374,8 +378,8 @@ function DamOfCalf($allAnimals, $calfId){
    $subCalfId = substr($calfId, 7);
    foreach($allAnimals as $tempAnimal){
       $tempId = $tempAnimal->getAnimalId();
-      if(preg_match("/$subCalfId/", $tempId)==1 && preg_match("/DM/", $tempId)==1){
-//         LogError(print_r($tempAnimal, true));
+      if(preg_match("/$subCalfId$/", $tempId)==1 && preg_match("/DM/", $tempId)==1){
+//         LogError("Dam ID: $tempId, Calf ID: $calfId, Criteria1: $subCalfId");
          return $tempAnimal;
       }
    }
